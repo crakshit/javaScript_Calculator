@@ -1,0 +1,30 @@
+body{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.row{
+    padding-top: 3px;
+}
+
+
+button{
+    height: 50px;
+    width: 80px;
+    font-size: 25px;
+    margin: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.func{
+    background-color: #ccc;
+}
+
+#input_value{
+    
+    text-align: right;
+    font-size: 41px;
+    padding: 10px;
+    background-color: #ffffff;
+}

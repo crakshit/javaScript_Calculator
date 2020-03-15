@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JavaScript Calculator </title>
+        <link rel="stylesheet" type="text/css" href="style.css"> 
+    </head>
+
+    <body>
+        <div class="calulator">
+            <div class="display">
+                <input type="text" id="input_value" value=0 disabled>
+            </div>
+            
+            <div class="row">
+                <button type="button" class="func" onclick="log()"> ln </button> 
+                <button type="button" class="func" onclick="square()"> x2 </button> 
+                <button type="button" class="func" onclick="changeSign(input_value)"> ± </button> 
+                <button type="button" class="func" onclick="input_value.value = 0"> C </button> 
+                <button type="button" class="func" onclick="erase()"> Back </button> 
+                <button type="button" class="func" onclick="insert('+')"> + </button>
+            </div>
+
+            <div class="row">
+                <button type="button" class="func" onclick="exp()"> Exp </button>
+                <button type="button" class="func" onclick="insert(3.14159265)"> π </button>
+                <button type="button" class="num" onclick="insert(7)"> 7 </button>
+                <button type="button" class="num" onclick="insert(8)"> 8 </button>
+                <button type="button" class="num" onclick="insert(9)"> 9 </button>
+                <button type="button" class="func" onclick="insert('-')"> - </button>
+            </div>    
+
+            <div class="row">
+                <button type="button" class="func" onclick="tan()"> Tan </button>
+                <button type="button" class="func" onclick="percent(input_value)"> % </button>
+                <button type="button" class="num" onclick="insert(4)"> 4 </button>
+                <button type="button" class="num" onclick="insert(5)"> 5 </button>
+                <button type="button" class="num" onclick="insert(6)"> 6 </button>
+                <button type="button" class="func" onclick="insert('/')"> / </button>
+            </div>
+
+            <div class="row">
+                <button type="button" class="func" onclick="cos()"> Cos </button>
+                <button type="button" class="func" onclick="sqrt()"> √x </button>
+                <button type="button" class="num" onclick="insert(1)"> 1 </button>
+                <button type="button" class="num" onclick="insert(2)"> 2 </button>
+                <button type="button" class="num" onclick="insert(3)"> 3 </button>
+                <button type="button" class="func" onclick="insert('*')"> * </button>
+            </div>
+
+            <div class="row">
+                <button type="button" class="func" onclick="sin()"> Sin </button>
+                <button type="button" class="func" onclick="insert('(')"> ( </button>
+                <button type="button" class="func" onclick="insert(')')"> ) </button>
+                <button type="button" class="num" onclick="insert(0)"> 0 </button>
+                <button type="button" class="func" onclick="insert('.')"> . </button>
+                <button type="button" class="func" onclick="compute()"> = </button>
+            </div>
+
+        </div>
+
+        <script src="calculator.js"> </script>
+    </body>
+</html>
