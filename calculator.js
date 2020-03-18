@@ -14,7 +14,14 @@ function compute() {
     var result = $("input_value").value;
     
     if(result){
-        $("input_value").value = eval(result);
+        try{
+            var final = eval(result);
+        }
+        catch(err) {
+            alert("Cannot compute with current expression.");
+            final = 0;
+        }
+        $("input_value").value = final;
     }
 }
 
@@ -33,46 +40,135 @@ function checkNum(num){
     }
 }
 
+function changeSign(){
+    if(checkNum(input_value.value)){
+        input_value.value = input_value.value*(-1);
+    }
+    
+}
+
 function sin(){
     if(checkNum(input_value.value)){
-    input_value.value = Math.sin(input_value.value);
+    
+        var val = Math.sin(input_value.value);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        input_value.value = val;
     }
 }
 
 function cos(){
     if(checkNum(input_value.value)){
-    input_value.value = Math.cos(input_value.value);
+        var val = Math.cos(input_value.value);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        input_value.value = val;
     }
 }
 
 function tan(){
     if(checkNum(input_value.value)){
-    input_value.value = Math.tan(input_value.value);
+        var val = Math.tan(input_value.value);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        input_value.value = val;
     }
 }
 
 function sqrt(){
     if(checkNum(input_value.value)){
-    input_value.value = Math.sqrt(input_value.value);
+        var val = Math.sqrt(input_value.value);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        input_value.value = val;
     }
 }
 
 function log(){
     if(checkNum(input_value.value)){
-    input_value.value = Math.log(input_value.value);
+        var val = Math.log(input_value.value);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        input_value.value = val;
     }
 }
 
 function exp(){
     if(checkNum(input_value.value)){
-    input_value.value = Math.exp(input_value.value);
+        var val = Math.exp(input_value.value);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        input_value.value = val;
     }
 }
 
 function square() {
     if(checkNum(input_value.value)){
-	  input_value.value = Math.pow(input_value.value,2);
+        var val = Math.pow(input_value.value,2);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        input_value.value = val;
     }
+}
+
+function percent() {
+    var per = [];
+    var v1, v2, final;
+    
+    if($("input_value").value.includes("+")){
+        per = $("input_value").value.split("+");
+        
+        if(per.length == 2){
+            v1 = parseFloat(per[0]);
+            v2 = parseFloat(per[1])/100;
+            v2 = v1*v2;
+            
+            final = v1 + v2;
+
+            
+        }else{
+            alert("Cannot perform percentage function.");
+            return;
+            
+        }
+    }
+    else if($("input_value").value.includes("-")){
+        per = $("input_value").value.split("-");
+        
+        if(per.length == 2){
+            v1 = parseFloat(per[0]);
+            v2 = parseFloat(per[1])/100;
+            v2 = v1*v2;
+            
+            final = v1 - v2;
+
+            
+        }else{
+            alert("Cannot perform percentage function.");
+            return;
+            
+        }   
+    }
+    else{
+        alert("Cannot perform percentage function.")
+        return;
+    }
+    
+    $("input_value").value = final;
 }
 
 function keyDown(e) {
