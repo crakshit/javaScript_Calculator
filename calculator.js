@@ -125,6 +125,22 @@ function square() {
     }
 }
 
+function pi() {
+    if(checkNum(input_value.value)){
+        var val = (parseFloat(input_value.value) * 3.14159265).toFixed(8);
+        if(isNaN(val)){
+            alert("Cannot compute with current value.");
+            val = 0;
+        }
+        else if(val ==0 ){
+            val = 3.14159265;
+        }
+        input_value.value = val;
+    }
+}
+
+
+
 function percent() {
     var per = [];
     var v1, v2, final;
